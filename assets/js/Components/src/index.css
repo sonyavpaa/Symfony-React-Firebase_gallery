@@ -1,7 +1,0 @@
-body {
-  height: 100%;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  place-items: center;
-}
