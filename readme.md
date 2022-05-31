@@ -2,7 +2,9 @@
 
 A photo gallery using Symfony that renders React that fetches data from Firebase database.
 
-## Install dependencies
+<br>
+
+# Install dependencies
 
 ```cli
 npm install
@@ -23,7 +25,9 @@ to start the server
 symfony server:start
 ```
 
-## Firebase
+<br>
+
+# Firebase
 
 Add your Firebase configuration to assets/components/firebaseConfig.js, see docs to do that here:
 https://firebase.google.com/docs/database/web/start
@@ -32,6 +36,22 @@ Without the config the gallery wont work.
 
 <br>
 
+Images are being fetched from Firebase Realtime Database using this model:
+
+```cli
+gallery: {data: {
+    1: {image: "add your Firestorage image Access token here", text:"some text"},
+
+    2: {image: "add your Firestorage image Access token here", text:"some text"},
+}
+}
+```
+
+Change the get request (line 24) and rendering (line 40) in Home.js if your model is different.
+
+About image access tokens:
+https://stackoverflow.com/questions/61303497/how-can-i-retrieve-this-image-stored-in-firebase-storage
+
 ---
 
 <br>
@@ -39,7 +59,8 @@ Without the config the gallery wont work.
 ### If still not working, things to check in webpack.config.js
 
 <br>
-entry file is opening the correct file
+
+Entry file is opening the correct file
 
 ```js
 .addEntry("app", "./assets/app.js")
@@ -50,3 +71,7 @@ React Preset is uncommented
 ```js
 .enableReactPreset();
 ```
+
+# Copyrights
+
+Free to use. If youre nice send me hi.
