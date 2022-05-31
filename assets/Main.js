@@ -9,7 +9,6 @@ const Main = () => {
     <Router>
       <Routes>
         <Route index element={<Home />} />
-        {/* <Route path="/createEvent" element={<CreateEvent />} /> */}
       </Routes>
     </Router>
   );

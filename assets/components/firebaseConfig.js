@@ -6,9 +6,7 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 
-const firebaseConfig = {
-  // get this from your firebase console
-};
+const firebaseConfig = {};
 
 // Initialize Firebase
 

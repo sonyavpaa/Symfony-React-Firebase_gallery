@@ -8,6 +8,18 @@ const Home = () => {
   const [images, setImages] = useState([]);
   const db = getDatabase();
 
+  const hoverTextContainer = document.querySelector(".hoverTextContainer");
+
+  const imageHover = (e) => {
+    console.log(e.currentTarget.children[3].innerHTML);
+
+    hoverTextContainer.innerHTML = e.currentTarget.children[3].innerHTML;
+  };
+
+  const imageHoverOut = () => {
+    hoverTextContainer.innerHTML = "";
+  };
+
   useEffect(() => {
     get(ref(db, "gallery")).then((response) =>
       setImages(response.toJSON().data)
@@ -20,11 +32,21 @@ const Home = () => {
         <div className="h1Container">
           <h1>SONJA VAINIONPÄÄ</h1>
         </div>
+        <p className="hoverTextContainer"></p>
       </div>
       <div className="rightContainer">
         <div className="image-grid galleryContainer">
+          {console.log(images)}
           {Object.keys(images).map((value, index) => {
-            return <Image src={images[value].image} />;
+            return (
+              <Image
+                hoverOut={imageHoverOut}
+                hover={(e) => imageHover(e)}
+                key={images[value].text}
+                src={images[value].image}
+                par={images[value].text}
+              />
+            );
           })}
         </div>
       </div>

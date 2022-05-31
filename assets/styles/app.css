@@ -60,6 +60,9 @@ h1 {
   grid-area: left;
   height: 100%;
   width: 100%;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-areas: "h1 hover";
 }
 
 .rightContainer {
@@ -68,12 +71,22 @@ h1 {
 }
 
 .h1Container {
+  grid-area: h1;
   height: 100%;
   width: 6em;
   position: fixed;
-  background-color: white;
+  /* background-color: white; */
   left: 0;
   top: -2px;
+}
+
+.hoverTextContainer {
+  grid-area: hover;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 0 0 1em;
 }
 
 img {
@@ -82,8 +95,20 @@ img {
   object-fit: cover;
 }
 
+.img {
+  width: 20em;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
 .image-grid {
+  margin: 1em 0 0 0;
   display: grid;
   gap: 0.5rem;
-  grid-template-columns: repeat(auto-fill, minmax(25em, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(19em, 1fr));
+}
+
+.img p {
+  visibility: hidden;
 }
