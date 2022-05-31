@@ -1,13 +1,52 @@
-### Photo Gallery Created with Symfony and React
+# Photo Gallery using Symfony + React + Firebase
 
-dependencies:
+A photo gallery using Symfony that renders React that fetches data from Firebase database.
 
-composer require symfony/webpack-encore-bundle
-npm add @babel/preset-react@^7.0.0 @babel/preset-react react react-dom prop-types axios --dev
-npm add react-router-dom @babel/plugin-proposal-class-properties @babel/plugin-transform-runtime
+## Install dependencies
 
+```cli
 npm install
-
 npm install react react-dom prop-types --save
+npm install firebase
+composer require symfony/webpack-encore-bundle
+```
 
-npm run encore dev --watch
+to run webpack
+
+```cli
+npm run watch
+```
+
+to start the server
+
+```cli
+symfony server:start
+```
+
+## Firebase
+
+Add your Firebase configuration to assets/components/firebaseConfig.js, see docs to do that here:
+https://firebase.google.com/docs/database/web/start
+
+Without the config the gallery wont work.
+
+<br>
+
+---
+
+<br>
+
+### If still not working, things to check in webpack.config.js
+
+<br>
+entry file is opening the correct file
+
+```js
+.addEntry("app", "./assets/app.js")
+```
+
+React Preset is uncommented
+
+```js
+.enableReactPreset();
+```
